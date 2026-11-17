@@ -130,7 +130,9 @@ async function api(request, env, url) {
     // A small network grace period applies only to the client's timed submission.
     // A late manual request cannot revive an expired answer window.
     const timely = !late || (data.timeout === true && Date.now() <= run.round_start + ROUND_MS + 1500);
-    const match = raw && timely ? matchAnswer(raw,prompt.answers) : null;
+    const best = () => [...prompt.answers].sort((a,b) => TIERS[b.tier].score - TIERS[a.tier].score)[0];
+    // Custom games can set autocorrectAll so any typed answer corrects to the prompt's top answer.
+    const match = raw && timely ? (matchAnswer(raw,prompt.answers) || (puzzle.autocorrectAll === true && prompt.answers.length ? { ...best(), correction: true } : null)) : null;
     if (!match && raw && !late && !data.timeout) return json({ rejected: true, message: `“${raw}”: no echo. try again` });
     if (match?.correction && data.confirm !== true && !late && !data.timeout && data.previewCorrection !== false) return json({ correction: match.answer, original: raw });
     const result = { round: run.next_round, rawAnswer: raw || null, answer: match?.answer || null, tier: match?.tier || null, score: match ? TIERS[match.tier].score : 0, quip: match?.quip || null, promptText: prompt.text };
