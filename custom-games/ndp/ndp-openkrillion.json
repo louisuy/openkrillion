@@ -1,0 +1,280 @@
+{
+  "source": "NDP custom game",
+  "autocorrectAll": true,
+  "prompts": [
+    {
+      "id": "ndp1",
+      "text": "Name a city in the world known for parties.",
+      "answers": [
+        {
+          "answer": "Dubai",
+          "tier": "krillion",
+          "aliases": [
+            "DXB",
+            "Las Vegas",
+            "Vegas",
+            "Ibiza",
+            "Eivissa",
+            "Miami",
+            "Rio de Janeiro",
+            "Rio",
+            "Berlin",
+            "Bangkok",
+            "New Orleans",
+            "NOLA",
+            "Mykonos",
+            "Amsterdam",
+            "Barcelona",
+            "Cancún",
+            "Tel Aviv",
+            "Belgrade",
+            "Budapest",
+            "Tulum",
+            "Ayia Napa",
+            "Agia Napa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ndp2",
+      "text": "Name a party venue in Dubai.",
+      "answers": [
+        {
+          "answer": "Helipad",
+          "tier": "krillion",
+          "aliases": [
+            "The Helipad",
+            "White Dubai",
+            "White",
+            "Soho Garden",
+            "Soho",
+            "Atlantis The Palm",
+            "Atlantis",
+            "Burj Khalifa",
+            "Zero Gravity",
+            "Barasti",
+            "Barasti Beach",
+            "Cove Beach",
+            "Bla Bla",
+            "Bla Bla Dubai",
+            "Nikki Beach",
+            "Drai's",
+            "Sky 2.0",
+            "Sky 2",
+            "Iris",
+            "Iris Dubai",
+            "Billionaire",
+            "Billionaire Dubai",
+            "Gold on 27",
+            "Bohemia",
+            "Base Dubai",
+            "Base"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ndp3",
+      "text": "Name a national holiday.",
+      "answers": [
+        {
+          "answer": "UAE National Day",
+          "tier": "krillion",
+          "aliases": [
+            "National Day",
+            "Eid Al Etihad",
+            "December 2",
+            "2nd December",
+            "Dec 2",
+            "Spirit of the Union",
+            "Independence Day",
+            "Fourth of July",
+            "4th of July",
+            "July 4th",
+            "Christmas",
+            "Christmas Day",
+            "New Year's Day",
+            "New Year",
+            "New Years",
+            "Thanksgiving",
+            "Bastille Day",
+            "Canada Day",
+            "Australia Day",
+            "Labour Day",
+            "Labor Day",
+            "Memorial Day",
+            "Republic Day",
+            "Juneteenth",
+            "Waitangi Day",
+            "King's Day",
+            "Koningsdag",
+            "Anzac Day",
+            "Commemoration Day",
+            "Martyrs' Day",
+            "UAE Commemoration Day"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ndp4",
+      "text": "Name a party concept in Dubai.",
+      "answers": [
+        {
+          "answer": "Next Door Party",
+          "tier": "krillion",
+          "aliases": [
+            "NDP",
+            "Next Door",
+            "The Next Door Party",
+            "Brunch",
+            "Friday brunch",
+            "Saturday brunch",
+            "Boozy brunch",
+            "Beach club",
+            "Beach party",
+            "Yacht party",
+            "Yacht",
+            "Boat party",
+            "Ladies' night",
+            "Pool party",
+            "Rooftop party",
+            "Rooftop",
+            "Day party",
+            "Day-to-night",
+            "Desert party",
+            "Desert rave",
+            "Desert camp party",
+            "Silent disco",
+            "House party",
+            "Villa party",
+            "Supper club"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ndp5",
+      "text": "Name a series of Next Door Party.",
+      "answers": [
+        {
+          "answer": "Next Door Party 8",
+          "tier": "krillion",
+          "aliases": [
+            "NDP8",
+            "NDP Eight",
+            "Next Door Party Eight",
+            "Next Door Party VIII",
+            "Next Door Party 1",
+            "NDP1",
+            "NDP One",
+            "Next Door Party One",
+            "Next Door Party I",
+            "Next Door Party 2",
+            "NDP2",
+            "NDP Two",
+            "Next Door Party Two",
+            "Next Door Party II",
+            "Next Door Party 3",
+            "NDP3",
+            "NDP Three",
+            "Next Door Party Three",
+            "Next Door Party III",
+            "Next Door Party 4",
+            "NDP4",
+            "NDP Four",
+            "Next Door Party Four",
+            "Next Door Party IV",
+            "Next Door Party 5",
+            "NDP5",
+            "NDP Five",
+            "Next Door Party Five",
+            "Next Door Party V",
+            "Next Door Party 6",
+            "NDP6",
+            "NDP Six",
+            "Next Door Party Six",
+            "Next Door Party VI",
+            "Next Door Party 7",
+            "NDP7",
+            "NDP Seven",
+            "Next Door Party Seven",
+            "Next Door Party VII"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ndp6",
+      "text": "Name a Dubai landmark.",
+      "answers": [
+        {
+          "answer": "Hatta Dam",
+          "tier": "krillion",
+          "aliases": [
+            "Hatta",
+            "Burj Khalifa",
+            "Burj Al Arab",
+            "Palm Jumeirah",
+            "The Palm",
+            "Palm",
+            "Dubai Mall",
+            "The Dubai Mall",
+            "Dubai Marina",
+            "Marina",
+            "Museum of the Future",
+            "Dubai Frame",
+            "The Frame",
+            "Global Village",
+            "Dubai Creek",
+            "The Creek",
+            "Ain Dubai",
+            "Al Fahidi",
+            "Al Bastakiya",
+            "Bastakiya",
+            "Al Fahidi Historical Neighbourhood",
+            "Jumeirah Mosque"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ndp7",
+      "text": "Name something you need for a good party.",
+      "answers": [
+        {
+          "answer": "Neighbours",
+          "tier": "krillion",
+          "aliases": [
+            "Neighbors",
+            "The neighbours",
+            "Next door neighbours",
+            "Music",
+            "Drinks",
+            "Alcohol",
+            "Booze",
+            "Friends",
+            "People",
+            "DJ",
+            "A DJ",
+            "Speaker",
+            "Speakers",
+            "Sound system",
+            "Lights",
+            "Lighting",
+            "Snacks",
+            "Food",
+            "Ice",
+            "Playlist",
+            "Dress code",
+            "Theme",
+            "Guest list",
+            "Wristbands",
+            "Wristband"
+          ]
+        }
+      ]
+    }
+  ]
+}
