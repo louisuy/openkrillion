@@ -2,6 +2,7 @@ import { SITE } from './config.mjs';
 import { documents } from './docs.mjs';
 import { homePage, infoPage } from './html.mjs';
 import { DEMO } from './demo.mjs';
+import NDP from '../custom-games/ndp/ndp-openkrillion.json' with { type: 'json' };
 import { TIERS, normalize, matchAnswer, etDate, resetAt, ROUND_MS, PREVIEW_MS } from '../public/rules.mjs';
 
 const cache = new Map();
@@ -40,6 +41,8 @@ async function puzzleFor(env, date) {
   if (env.REFERENCE_SYNC === 'true' && date === etDate()) {
     try { return await syncPuzzle(env, date); } catch (e) { console.warn('Puzzle synchronization failed:', e.message); }
   }
+  // CUSTOM_GAME=ndp serves the NDP custom game every day, with no database row needed.
+  if (env.CUSTOM_GAME === 'ndp') return { source: NDP.source, autocorrectAll: NDP.autocorrectAll === true, prompts: NDP.prompts, date, dayNumber: Math.floor((Date.parse(date) - Date.parse('2026-07-16')) / 86400000) + 1 };
   return { ...DEMO, date, dayNumber: Math.floor((Date.parse(date) - Date.parse('2026-07-16')) / 86400000) + 1, sample: true };
 }
 async function saveSample(env, puzzle) {
@@ -85,7 +88,9 @@ async function api(request, env, url) {
     return json({ prompts: puzzle.prompts.map(p => ({ ...p, answers: p.answers.map(a => ({ ...a, score: TIERS[a.tier].score })).sort((a,b) => b.score - a.score || a.answer.localeCompare(b.answer)) })), population: others.length, betterThan: others.length >= 5 ? Math.round(others.filter(p => p.score < own.score).length / others.length * 100) : null, dist });
   }
   if (request.method !== 'POST') return fail('Unknown endpoint.', 404);
-  if (request.headers.get('Origin') && request.headers.get('Origin') !== url.origin) return fail('Cross-origin requests are not accepted.', 403);
+  // ALLOWED_ORIGINS (comma-separated) lets a site that proxies the game, such as https://nextdoor.party, post to the API.
+  const origin = request.headers.get('Origin'), allowed = String(env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
+  if (origin && origin !== url.origin && !allowed.includes(origin)) return fail('Cross-origin requests are not accepted.', 403);
   if (Number(request.headers.get('Content-Length') || 0) > 8000) return fail('Request is too large.', 413);
   if (!await limit(env, request, player)) return fail('Too many requests. Take a breath and try again.', 429);
   let data; try { const raw = await request.text(); if (raw.length > 8000) return fail('Request is too large.', 413); data = JSON.parse(raw); } catch { return fail('Invalid request.'); }
